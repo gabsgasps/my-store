@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+
+  <mat-toolbar-row>
+    <span>{{title}}</span>
+    <span class="example-spacer"></span>
+    <mat-icon class="example-icon">edit</mat-icon>
+    <mat-icon class="example-icon">exit_to_app</mat-icon>
+    <mat-icon class="example-icon">
+      <span matBadge="4" matBadgePosition="before" matBadgeOverlap="false">
+        shopping_cart
+      </span>
+    </mat-icon>
+
+  <mat-icon [matMenuTriggerFor]="menu" class="example-icon">menu</mat-icon>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+      <button mat-menu-item>Item 2</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+  </mat-toolbar-row>
+
+</mat-toolbar>
