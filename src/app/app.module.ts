@@ -14,13 +14,17 @@ import { HomeModule } from './home/home.module';
 import { PanelComponent } from './panel/panel.component';
 import { HeaderComponent } from './header/header.component';
 import { CartComponent } from './cart/cart.component';
+import { ProductItemComponent } from './products/product-item/product-item.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     PanelComponent,
-    CartComponent
+    CartComponent,
+    ProductItemComponent
+    
   ],
   imports: [
     BrowserModule,
