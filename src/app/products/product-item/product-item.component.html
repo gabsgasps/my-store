@@ -1,16 +1,16 @@
-<!-- <mat-card class="product-card" tabindex="0" *ngFor="let product of products">
+<mat-card class="product-card" tabindex="0" *ngFor="let product of products">
 
     <img mat-card-image src="{{product.img}}" alt="">
     <mat-card-title>{{product.name}}</mat-card-title>
     <mat-card-content>
       <p>
-        {{product.price}}
+        R$ {{product.price}}
       </p>
-      <p>{{product.parcel}}</p>
+      <p>{{product.parcel}} X de {{product.price - 20}}</p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-flat-button>Basic</button>
+      <button mat-flat-button>Buy</button>
       <button mat-button>Add at Cart</button>
     </mat-card-actions>
 
-  </mat-card> -->
+  </mat-card>

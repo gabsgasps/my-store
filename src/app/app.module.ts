@@ -15,6 +15,9 @@ import { PanelComponent } from './panel/panel.component';
 import { HeaderComponent } from './header/header.component';
 import { CartComponent } from './cart/cart.component';
 import { ProductItemComponent } from './products/product-item/product-item.component';
+import { AppRoutingModule } from './app.routing.module.';
+import { ProductsModule } from './products/products.module';
+import { HomePageComponent } from './home/home-page/home-page.component';
 
 
 @NgModule({
@@ -22,13 +25,12 @@ import { ProductItemComponent } from './products/product-item/product-item.compo
     AppComponent,
     HeaderComponent,
     PanelComponent,
-    CartComponent,
-    ProductItemComponent
-    
+    CartComponent    
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
@@ -39,7 +41,8 @@ import { ProductItemComponent } from './products/product-item/product-item.compo
     MatToolbarModule,
     MatBadgeModule,
     MatTableModule,
-    HomeModule
+    HomeModule,
+    ProductsModule
   ],
   entryComponents: [
     CartComponent

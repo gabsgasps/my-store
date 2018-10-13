@@ -2,14 +2,14 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../product-item';
 
 @Component({
-  selector: 'app-product-item',
-  templateUrl: './product-item.component.html',
-  styleUrls: ['./product-item.component.css'],
+  selector: 'app-show-case',
+  templateUrl: './show-case.component.html',
+  styleUrls: ['./show-case.component.css']
 })
-export class ProductItemComponent implements OnInit {
+export class ShowCaseComponent implements OnInit {
 
   @Input() products: Product[];
-
+  
   constructor() { }
 
   ngOnInit() {

@@ -1,6 +1,4 @@
-<div class="btn-cart">
-  <button mat-raised-button > See Cart</button>
-  <button mat-raised-button >Finish </button>
+<div class="btn-close">
   <button  mat-icon-button mat-dialog-close>
     <mat-icon >close</mat-icon>
   </button>
@@ -28,3 +26,8 @@
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
 </table>
+
+<div class="btn-cart">
+    <button mat-raised-button routerLink="/carrinho"> See Cart</button>
+    <button mat-raised-button>Finish </button>
+  </div>
