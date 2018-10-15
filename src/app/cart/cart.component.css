@@ -1,16 +1,26 @@
 table{
     width: 100%;
     margin-bottom: 1rem;
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: grey;
 }
 .btn-cart{
-    width: 50%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     margin-right: auto;
 }
+.btn-cart>div{
+    display: flex;
+    justify-content: space-between;
+}
 th{
-    font-weight: 700;
-    text-transform: uppercase;
+    text-align: left;
+}
+tr{
+    height: 3rem;
 }
 .btn-close{
     width: 10%;

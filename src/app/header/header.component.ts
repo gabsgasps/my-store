@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartComponent } from '../cart/cart.component';
 import { MatDialog } from '@angular/material';
+import { CartService } from '../cart/cart-service/cart-service';
 
 @Component({
   selector: 'app-header',
@@ -10,24 +11,28 @@ import { MatDialog } from '@angular/material';
 export class HeaderComponent implements OnInit {
 
   title = ' Bem  Vindo';
+  lengthOfProducts: number;
 
   ngOnInit() {
   }
 
-  dialogResult = '';
   
-  constructor(public dialog: MatDialog) {}
+  constructor(
+    public dialog: MatDialog,
+    private cartService: CartService
+  ) {
+
+  }
 
   openDialog(): void {
+    this.cartService.getSubjectProduct();
     const dialogRef = this.dialog.open(CartComponent,{
       width: '500px',
       height: 'auto',
       data: ' '
     });
 
-    // dialogRef.afterClosed().subscribe(result => {
-    //   this.dialogResult = result;
-    //   console.log(this.dialogResult);
-    // });
+    
+    
   }
 }

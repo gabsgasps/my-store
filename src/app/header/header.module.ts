@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 
 import { HeaderComponent } from "./header.component";
+import { CartModule } from "../cart/cart.module";
 
 
 @NgModule({
@@ -10,7 +11,8 @@ import { HeaderComponent } from "./header.component";
         HeaderComponent
     ],
     imports: [ 
-        CommonModule
+        CommonModule,
+        CartModule
     ],
     exports: [
         HeaderComponent

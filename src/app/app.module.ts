@@ -8,16 +8,15 @@ import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButt
 import { LayoutModule } from '@angular/cdk/layout';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTableModule} from '@angular/material/table';
+import {MatDividerModule} from '@angular/material/divider';
 
 
 import { HomeModule } from './home/home.module';
 import { PanelComponent } from './panel/panel.component';
 import { HeaderComponent } from './header/header.component';
 import { CartComponent } from './cart/cart.component';
-import { ProductItemComponent } from './products/product-item/product-item.component';
 import { AppRoutingModule } from './app.routing.module.';
 import { ProductsModule } from './products/products.module';
-import { HomePageComponent } from './home/home-page/home-page.component';
 
 
 @NgModule({
@@ -41,6 +40,7 @@ import { HomePageComponent } from './home/home-page/home-page.component';
     MatToolbarModule,
     MatBadgeModule,
     MatTableModule,
+    MatDividerModule,
     HomeModule,
     ProductsModule
   ],

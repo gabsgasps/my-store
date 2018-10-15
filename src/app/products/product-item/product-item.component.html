@@ -10,11 +10,11 @@
         <p>
           R$ {{product.price}}
         </p>
-        <p>{{product.parcel}} X de {{product.price - 20}}</p>
+        <p>{{product.parcel}}</p>
       </mat-card-content>
       <mat-card-actions>
         <button mat-flat-button>Buy</button>
-        <button mat-button>Add at Cart</button>
+        <button mat-button (click)=" add(product.name, product.price) ">Add at Cart</button>
       </mat-card-actions>
   
     </mat-card>
