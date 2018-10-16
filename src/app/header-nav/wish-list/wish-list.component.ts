@@ -20,10 +20,7 @@ export class WishListComponent implements OnInit {
 
     this.wishListSubject$ =  this.wishListService.getWishListObservable();
 
-    this.wishListSubject$.subscribe( wishList => {
-      this.wishList = wishList,
-      console.log(this.wishList)
-    } );
+    this.wishListSubject$.subscribe( wishList => this.wishList = wishList);
   }
 
 }

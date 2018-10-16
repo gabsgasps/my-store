@@ -19,6 +19,8 @@ import { ProductsModule } from './products/products.module';
 import { CartComponent } from './header-nav/cart/cart.component';
 import { CartModule } from './header-nav/cart/cart.module';
 import { HeaderModule } from './header-nav/header.module';
+import { WishListModule } from './header-nav/wish-list/wish-list.module';
+import { WishListComponent } from './header-nav/wish-list/wish-list.component';
 
 
 @NgModule({
@@ -44,10 +46,12 @@ import { HeaderModule } from './header-nav/header.module';
     HomeModule,
     ProductsModule,
     CartModule,
-    HeaderModule
+    HeaderModule,
+    WishListModule
   ],
   entryComponents: [
-    CartComponent
+    CartComponent,
+    WishListComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

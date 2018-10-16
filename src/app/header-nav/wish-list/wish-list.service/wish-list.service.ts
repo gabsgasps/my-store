@@ -31,10 +31,25 @@ export class WishListService {
 
         this.wishListSubject.next(this.wishList);
     }
-    
+
+    removeProductItem(name: any) {
+
+        let p = this.wishList.splice(name, 1);
+        window.localStorage.setItem( wishListLocalStorage, JSON.stringify(p));
+        this.wishListSubject.next(this.getWishList());
+    }
+ 
     getWishListObservable() {
         return this.wishListSubject.asObservable();
-    } 
+    }
+    
+    emptyWishList() {
+
+        this.wishList = [];
+        window.localStorage.removeItem(wishListLocalStorage);
+        this.wishListSubject.next(this.getWishList());
+    }
+
     private hasWishlist() {
         return !!this.getWishList();
     }
