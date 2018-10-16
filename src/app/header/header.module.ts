@@ -3,6 +3,7 @@ import { CommonModule } from "@angular/common";
 
 import { HeaderComponent } from "./header.component";
 import { CartModule } from "../cart/cart.module";
+import { MatIconModule, MatToolbarModule, MatButtonModule, MatMenuModule, MatBadgeModule } from "@angular/material";
 
 
 @NgModule({
@@ -12,7 +13,12 @@ import { CartModule } from "../cart/cart.module";
     ],
     imports: [ 
         CommonModule,
-        CartModule
+        CartModule,
+        MatMenuModule,
+        MatIconModule,
+        MatButtonModule,
+        MatToolbarModule,
+        MatBadgeModule,
     ],
     exports: [
         HeaderComponent

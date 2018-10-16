@@ -1,30 +1,28 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import {MatToolbarModule} from '@angular/material/toolbar';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule, MatBadgeModule } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatTableModule} from '@angular/material/table';
-import {MatDividerModule} from '@angular/material/divider';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatGridListModule,
+  MatCardModule, MatMenuModule,
+  MatIconModule, MatButtonModule, 
+  MatBadgeModule, MatDialogModule, 
+  MatTableModule, MatDividerModule, 
+  MatToolbarModule } from '@angular/material';
 
 
-import { HomeModule } from './home/home.module';
-import { PanelComponent } from './panel/panel.component';
-import { HeaderComponent } from './header/header.component';
-import { CartComponent } from './cart/cart.component';
 import { AppRoutingModule } from './app.routing.module.';
+import { HomeModule } from './home/home.module';
 import { ProductsModule } from './products/products.module';
+import { CartComponent } from './cart/cart.component';
+import { CartModule } from './cart/cart.module';
+import { HeaderModule } from './header/header.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
-    PanelComponent,
-    CartComponent    
+    AppComponent  
   ],
   imports: [
     BrowserModule,
@@ -42,7 +40,9 @@ import { ProductsModule } from './products/products.module';
     MatTableModule,
     MatDividerModule,
     HomeModule,
-    ProductsModule
+    ProductsModule,
+    CartModule,
+    HeaderModule
   ],
   entryComponents: [
     CartComponent

@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" class="nav">
 
   <mat-toolbar-row>
     <span>{{title}}</span>
@@ -9,7 +9,7 @@
       <span 
         mat-raised-button 
         (click)="openDialog()"
-        matBadge="" matBadgePosition="before"
+        matBadge="{{length}}" matBadgePosition="before"
         matBadgeOverlap="false">
         shopping_cart
       </span>

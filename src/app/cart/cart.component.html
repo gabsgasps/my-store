@@ -13,9 +13,9 @@
   </thead>
   <mat-divider></mat-divider>
   <tbody *ngFor="let p of products">
-    <tr>
-      <td>{{p.name}}</td>
-      <td>{{p.price}}</td>
+    <tr (click)="remove(p.name)">
+        <td>{{p.name}}</td>
+        <td>{{p.price}}</td>
     </tr>
     <mat-divider></mat-divider>
   </tbody>
@@ -29,5 +29,5 @@
     <button mat-raised-button (click)="empty()">Empty Cart</button>  
     <button mat-raised-button color="primary">Finish </button>
   </div>
-  <button mat-raised-button disabled *ngIf="total"> TOTAL: R$ {{total}}</button>
+  <button mat-raised-button disabled > TOTAL: R$ {{getTotal}}</button>
 </div>

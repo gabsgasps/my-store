@@ -1,11 +1,10 @@
 import { Injectable } from "@angular/core";
+import { BehaviorSubject } from "rxjs";
+
 import { CartProduct } from "../cart-product";
-import { Subject, BehaviorSubject } from "rxjs";
 
 
 const NamelocalStorage = 'ProductsIntoTheCart';
-const prodIntoThelocalStorage = JSON.parse(window.localStorage.getItem('ProductsIntoTheCart'));
-
 @Injectable({
     providedIn: 'root'
 })
@@ -13,53 +12,73 @@ export class CartService {
     
     products: CartProduct[] = [];
 
-    productSubject = new BehaviorSubject<CartProduct[]>(
-        prodIntoThelocalStorage    
-    );
+    productSubject = new BehaviorSubject<CartProduct[]>( this.getProducts() );
     
-    private hasItProduct(product) {
-        let a = this.products.indexOf(product);
-        console.log(product);
-        return a
-    }
+    constructor() {
 
-    constructor() {  
-        this.getProducts(); 
-    } 
-
-
-    addProduct(name: string, price: number) {
-       
-        this.products.push({name, price});
-        console.log(this.products);
-        window.localStorage.setItem( NamelocalStorage, JSON.stringify(this.products));
-        
         this.getProducts();
+        if(this.hasProducts()) 
+            this.products = JSON.parse(window.localStorage.getItem('ProductsIntoTheCart'));
+    } 
+    
+    addProduct(name: string, price: number) {
+        
+        if(this.hasProducts()) 
+            this.products = JSON.parse(window.localStorage.getItem('ProductsIntoTheCart'));
+        
+        
+
+        if(this.hasItProduct(name)){
+            
+            this.products.push( {name, price} );
+
+            window.localStorage.setItem( NamelocalStorage, JSON.stringify(this.products));
+        
+            this.productSubject.next(this.getProducts());
+        }
+    
+        
     }
 
     
+    removeProductItem(name: any) {
 
-    removeProductItem(name: any, price: any) {
-
-       this.products.splice(name, 1);
-       window.localStorage.setItem( NamelocalStorage, JSON.stringify(this.products));
+       let p = this.products.splice(name, 1);
+       window.localStorage.setItem( NamelocalStorage, JSON.stringify(p));
+       this.productSubject.next(this.getProducts());
     }
 
     getSubjectProduct() {
 
         return this.productSubject.asObservable();
     }
-
-    private getProducts() {
-
-        return this.productSubject.next(prodIntoThelocalStorage); 
-    }
-
     
     emptyCart() {
 
+        this.products = [];
         window.localStorage.removeItem(NamelocalStorage);
+        this.productSubject.next(this.getProducts());
+    }
+    
+    hasProducts() {
+        return !!this.getProducts();
     }
 
-   
+    // get Products into the LocalStorage
+    private getProducts() {
+
+        return JSON.parse(window.localStorage.getItem('ProductsIntoTheCart')); 
+    }
+
+     
+    private hasItProduct(product: string) {
+
+        return !this.products.some(p => product == p.name);
+    }
+
+    lengthOfProducts(): number {
+        
+        return this.products.length;
+    }
+
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CartService } from './cart-service/cart-service';
 import { Observable } from 'rxjs';
 import { CartProduct } from './cart-product';
@@ -6,55 +6,42 @@ import { CartProduct } from './cart-product';
 
 @Component({
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css'],
-  changeDetection: ChangeDetectionStrategy.Default
+  styleUrls: ['./cart.component.css']
 })
 
 export class CartComponent implements OnInit {
   
+  @Input() checked;
   subject$: Observable<CartProduct[]>;
 
   getTotal;
-  total;
-  products;
+  products: CartProduct[];
 
-  constructor(
-    private cartService: CartService,
-    private teste: ChangeDetectorRef) { 
-
-      // this.updateCart();
-    }
+  constructor( private cartService: CartService ) { }
     
     ngOnInit() {
       
       this.subject$ = this.cartService.getSubjectProduct();
       
-      console.log(this.subject$);
       this.subject$
-        .subscribe( products => {
-          this.products = products,
-          console.log(products)
-        })
-      // this.priceTotal();
-      
+        .subscribe( products => this.products = products);
+
+      if(this.cartService.hasProducts())
+        this.getTotal = (this.products.reduce((price1, price2) => 
+          price1 + price2.price, 0)).toFixed(2);
     }
     
-    updateCart() {
-
+    private priceTotal() {
+      
+      this.products.reduce( (price1, price2) => 
+          this.getTotal =  price1 + price2.price, 0);
     }
 
-    // private priceTotal() {
-      
-    //   this.getTotal.reduce( (price1, price2) => 
-    //       this.total =  price1 + price2.price, 0);
-    // }
+    remove(target) { 
 
-    remove(target) {
-      
-      target;
+      this.cartService.removeProductItem(target);
     }
   
-
     empty() {
       this.cartService.emptyCart();
     }
