@@ -5,7 +5,7 @@ import { Directive, ElementRef, Renderer2, HostListener, Input} from '@angular/c
 })
 export class ChangeButtonDirective {
     @Input() text:string;
-    @Input() colorAdded:string = '#f5d470';
+    @Input() colorAdded:string = '#f5d47';
     constructor(
         private el: ElementRef,
         private render: Renderer2
