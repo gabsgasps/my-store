@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { MatCardModule, MatButtonModule, MatGridListModule } from "@angular/material";
+import { MatCardModule, MatButtonModule, MatGridListModule, MatIconModule, MatTooltipModule, MatSnackBarModule } from "@angular/material";
 
 import { ProductItemComponent } from "./product-item/product-item.component";
 import { ShowCaseComponent } from "./show-case/show-case.component";
@@ -17,7 +17,10 @@ import {AddedOnClickModule} from './product-item/directive-added/added-on-click.
         MatGridListModule,
         MatCardModule,
         MatCardModule,
-        AddedOnClickModule
+        AddedOnClickModule,
+        MatIconModule,
+        MatTooltipModule,
+        MatSnackBarModule
     ],
     exports: [
         ProductItemComponent,

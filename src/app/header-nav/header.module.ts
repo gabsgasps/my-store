@@ -2,14 +2,17 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 
 import { HeaderComponent } from "./header.component";
-import { CartModule } from "../cart/cart.module";
+import { CartModule } from "./cart/cart.module";
 import { MatIconModule, MatToolbarModule, MatButtonModule, MatMenuModule, MatBadgeModule } from "@angular/material";
+import { WishListComponent } from './wish-list/wish-list.component';
 
 
 @NgModule({
     declarations: [
 
-        HeaderComponent
+        HeaderComponent,
+
+        WishListComponent
     ],
     imports: [ 
         CommonModule,

@@ -17,14 +17,15 @@ export class CartService {
     constructor() {
 
         this.getProducts();
+        
         if(this.hasProducts()) 
-            this.products = JSON.parse(window.localStorage.getItem('ProductsIntoTheCart'));
+            this.products = JSON.parse(window.localStorage.getItem(NamelocalStorage));
     } 
     
     addProduct(name: string, price: number) {
         
         if(this.hasProducts()) 
-            this.products = JSON.parse(window.localStorage.getItem('ProductsIntoTheCart'));
+            this.products = JSON.parse(window.localStorage.getItem(NamelocalStorage));
         
         
 
@@ -67,7 +68,7 @@ export class CartService {
     // get Products into the LocalStorage
     private getProducts() {
 
-        return JSON.parse(window.localStorage.getItem('ProductsIntoTheCart')); 
+        return JSON.parse(window.localStorage.getItem(NamelocalStorage)); 
     }
 
      

@@ -1,6 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../product-item';
-import { CartService } from '../../cart/cart-service/cart-service';
+import { CartService } from '../../header-nav/cart/cart-service/cart-service';
+import { MatSnackBar } from '@angular/material';
+import { WishListComponent } from '../../header-nav/wish-list/wish-list.component';
+import { WishListService } from '../../header-nav/wish-list/wish-list.service/wish-list.service';
 
 @Component({
   selector: 'app-product-item',
@@ -11,18 +14,26 @@ export class ProductItemComponent implements OnInit {
   
   @Input() products: Product[];
   
-  foi(t) {
-    t.innerHTML = 'Adicionado';
-  }
-  constructor(private cartService: CartService) { }
+  constructor(
+    private cartService: CartService,
+    public snackBar: MatSnackBar,
+    private wishListService: WishListService
+  ) { }
 
-  
   add(name, price) {
 
     this.cartService.addProduct(name, price);
-    
   }
-  ngOnInit() {
+  ngOnInit() { }
+
+  openSnackBar(message: string, action: string) {
+
+    this.wishListService.addAtWishList(message, action);
+
+    this.snackBar.open(message, action, {
+      duration: 2000,
+    });
+
   }
 
 }

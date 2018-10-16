@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule} from '@angular/router';
 
 import { HomePageComponent } from "./home/home-page/home-page.component";
-import { CartComponent } from "./cart/cart.component";
+import { CartComponent } from "./header-nav/cart/cart.component";
 
 const routes: Routes = [
     {

@@ -9,15 +9,16 @@ import { MatGridListModule,
   MatIconModule, MatButtonModule, 
   MatBadgeModule, MatDialogModule, 
   MatTableModule, MatDividerModule, 
-  MatToolbarModule } from '@angular/material';
+  MatToolbarModule, 
+  MatTooltipModule} from '@angular/material';
 
 
 import { AppRoutingModule } from './app.routing.module.';
 import { HomeModule } from './home/home.module';
 import { ProductsModule } from './products/products.module';
-import { CartComponent } from './cart/cart.component';
-import { CartModule } from './cart/cart.module';
-import { HeaderModule } from './header/header.module';
+import { CartComponent } from './header-nav/cart/cart.component';
+import { CartModule } from './header-nav/cart/cart.module';
+import { HeaderModule } from './header-nav/header.module';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { HeaderModule } from './header/header.module';
     MatBadgeModule,
     MatTableModule,
     MatDividerModule,
+    MatTooltipModule,
     HomeModule,
     ProductsModule,
     CartModule,

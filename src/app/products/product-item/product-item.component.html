@@ -5,19 +5,31 @@
     <mat-card class="product-card" tabindex="0" >
   
       <img mat-card-image src="{{product.img}}" alt="">
-      <mat-card-title>{{product.name}}</mat-card-title>
+      <mat-card-title #message>{{product.name}}</mat-card-title>
       <mat-card-content>
-        <p>
+        <p #action>
           R$ {{product.price}}
         </p>
         <p>{{product.parcel}}</p>
       </mat-card-content>
       <mat-card-actions>
         <button mat-flat-button>Buy</button>
-        <button mat-button changeForAdded text="Adicionado"
+        <button 
+          mat-button 
+          changeForAdded text="Adicionado"
           [disabled]="disabled" 
           (click)=" add(product.name, product.price);">
           Add at Cart</button>
+
+          <button 
+            mat-icon-button 
+            matTooltip="Add to Wishlist"
+            aria-label="Heart Icon click to add wish list"
+            color="warn">
+            <mat-icon (click)="openSnackBar(message.innerHTML, action.innerHTML)">
+              favorite
+            </mat-icon>
+          </button>
       </mat-card-actions>
   
     </mat-card>

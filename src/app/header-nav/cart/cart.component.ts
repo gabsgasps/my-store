@@ -11,7 +11,6 @@ import { CartProduct } from './cart-product';
 
 export class CartComponent implements OnInit {
   
-  @Input() checked;
   subject$: Observable<CartProduct[]>;
 
   getTotal;
@@ -30,12 +29,6 @@ export class CartComponent implements OnInit {
         this.getTotal = (this.products.reduce((price1, price2) => 
           price1 + price2.price, 0)).toFixed(2);
     }
-    
-    private priceTotal() {
-      
-      this.products.reduce( (price1, price2) => 
-          this.getTotal =  price1 + price2.price, 0);
-    }
 
     remove(target) { 
 
@@ -45,7 +38,6 @@ export class CartComponent implements OnInit {
     empty() {
       this.cartService.emptyCart();
     }
-  
   
 
 }

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CartComponent } from '../cart/cart.component';
 import { MatDialog } from '@angular/material';
-import { CartService } from '../cart/cart-service/cart-service';
-import { Observable } from 'rxjs';
+import { CartService } from './cart/cart-service/cart-service';
+import { CartComponent } from './cart/cart.component';
 
 @Component({
   selector: 'app-header',
