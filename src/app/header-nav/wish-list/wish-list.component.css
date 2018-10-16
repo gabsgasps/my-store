@@ -1,0 +1,8 @@
+button{
+    margin-left: 1rem;
+}
+.rowItem{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}

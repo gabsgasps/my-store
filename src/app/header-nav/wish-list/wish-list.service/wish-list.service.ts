@@ -11,31 +11,35 @@ export class WishListService {
     wishList: CartProduct[] = [];
     
     wishListSubject = new BehaviorSubject<CartProduct[]>(
-        this.getWishList()
+        JSON.parse(window.localStorage.getItem(wishListLocalStorage))
     );
     constructor() { 
 
-        this.getWishList();
+        JSON.parse(window.localStorage.getItem(wishListLocalStorage));
 
-        if(this.hasWishlist()) this.wishList = this.getWishList();
+        if(this.hasWishlist()) this.wishList = JSON.parse(window.localStorage.getItem(wishListLocalStorage));
 
     }
 
     addAtWishList(name, price) {
         
-        if(this.hasWishlist()) this.wishList = this.getWishList();
+        if(this.hasWishlist()) 
+            this.wishList = JSON.parse(window.localStorage.getItem(wishListLocalStorage));
 
-        this.wishList.push({name, price});
+        if(this.hasItProduct(name)) {
 
-        window.localStorage.setItem(wishListLocalStorage, JSON.stringify(this.wishList));
-
-        this.wishListSubject.next(this.wishList);
+            this.wishList.push( {name, price} );
+    
+            window.localStorage.setItem(wishListLocalStorage, JSON.stringify(this.wishList));
+    
+            this.wishListSubject.next(JSON.parse(window.localStorage.getItem(wishListLocalStorage)));
+        }
     }
 
     removeProductItem(name: any) {
 
-        let p = this.wishList.splice(name, 1);
-        window.localStorage.setItem( wishListLocalStorage, JSON.stringify(p));
+        this.wishList.splice(name, 1);
+        window.localStorage.setItem( wishListLocalStorage, JSON.stringify(this.wishList));
         this.wishListSubject.next(this.getWishList());
     }
  
@@ -47,11 +51,14 @@ export class WishListService {
 
         this.wishList = [];
         window.localStorage.removeItem(wishListLocalStorage);
-        this.wishListSubject.next(this.getWishList());
+        this.wishListSubject.next(JSON.parse(window.localStorage.getItem(wishListLocalStorage)));
     }
+    private hasItProduct(product: string) {
 
+        return !this.wishList.some(p => product == p.name);
+    }
     private hasWishlist() {
-        return !!this.getWishList();
+        return !!JSON.parse(window.localStorage.getItem(wishListLocalStorage));
     }
     private getWishList() {
 

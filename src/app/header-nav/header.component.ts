@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
+
 import { CartService } from './cart/cart-service/cart-service';
 import { CartComponent } from './cart/cart.component';
 import { WishListComponent } from './wish-list/wish-list.component';
@@ -24,7 +25,7 @@ export class HeaderComponent implements OnInit {
   }
 
   openDialog(): void {
-    this.cartService.getSubjectProduct();
+    
     const dialogRef = this.dialog.open(CartComponent,{
       width: '500px',
       height: 'auto',
@@ -34,7 +35,7 @@ export class HeaderComponent implements OnInit {
   }
 
   openDialogWishList(): void {
-    this.cartService.getSubjectProduct();
+    
     const ref = this.dialog.open(WishListComponent,{
       width: '500px',
       height: 'auto',
@@ -42,4 +43,5 @@ export class HeaderComponent implements OnInit {
     });
 
   }
+  
 }

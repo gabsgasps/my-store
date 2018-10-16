@@ -1,33 +1,33 @@
-<div class="btn-close">
-  <button  mat-icon-button mat-dialog-close>
-    <mat-icon >close</mat-icon>
-  </button>
-</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Price</th>
-    </tr>
-  </thead>
-  <mat-divider></mat-divider>
-  <tbody *ngFor="let p of products">
-    <tr (click)="remove(p.name)">
-        <td>{{p.name}}</td>
-        <td>{{p.price}}</td>
-    </tr>
+
+
+<app-dialog>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+      </tr>
+    </thead>
     <mat-divider></mat-divider>
-  </tbody>
-  <tfoot></tfoot>
-</table>
-
-
-<div class="btn-cart">
-  <div>
-    <button mat-raised-button routerLink="/carrinho"> See Cart</button>
-    <button mat-raised-button (click)="empty()">Empty Cart</button>  
-    <button mat-raised-button color="primary">Finish </button>
+    <tbody *ngFor="let p of products">
+      <tr (click)="remove(p.name)">
+          <td>{{p.name}}</td>
+          <td>{{p.price}}</td>
+      </tr>
+      <mat-divider></mat-divider>
+    </tbody>
+    <tfoot></tfoot>
+  </table>
+  
+  
+  <div class="btn-cart">
+    <div>
+      <button mat-raised-button routerLink="/carrinho"> See Cart</button>
+      <button mat-raised-button (click)="empty()">Empty Cart</button>  
+      <button mat-raised-button color="primary">Finish </button>
+    </div>
+    <button mat-raised-button disabled > TOTAL: R$ {{getTotal}}</button>
   </div>
-  <button mat-raised-button disabled > TOTAL: R$ {{getTotal}}</button>
-</div>
+</app-dialog>

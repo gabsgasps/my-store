@@ -44,8 +44,8 @@ export class CartService {
     
     removeProductItem(name: any) {
 
-       let p = this.products.splice(name, 1);
-       window.localStorage.setItem( NamelocalStorage, JSON.stringify(p));
+       this.products.splice(name, 1);
+       window.localStorage.setItem( NamelocalStorage, JSON.stringify(this.products));
        this.productSubject.next(this.getProducts());
     }
 

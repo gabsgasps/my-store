@@ -21,6 +21,8 @@ import { CartModule } from './header-nav/cart/cart.module';
 import { HeaderModule } from './header-nav/header.module';
 import { WishListModule } from './header-nav/wish-list/wish-list.module';
 import { WishListComponent } from './header-nav/wish-list/wish-list.component';
+import { DialogModule } from './shared/dialog/dialog.module';
+import { DialogComponent } from './shared/dialog/dialog.component';
 
 
 @NgModule({
@@ -43,11 +45,12 @@ import { WishListComponent } from './header-nav/wish-list/wish-list.component';
     MatTableModule,
     MatDividerModule,
     MatTooltipModule,
+    DialogModule,
     HomeModule,
     ProductsModule,
     CartModule,
     HeaderModule,
-    WishListModule
+    WishListModule,
   ],
   entryComponents: [
     CartComponent,

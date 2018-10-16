@@ -20,17 +20,18 @@ export class ProductItemComponent implements OnInit {
     private wishListService: WishListService
   ) { }
 
-  add(name, price) {
+  add(name: string, price: number) {
 
     this.cartService.addProduct(name, price);
   }
+
   ngOnInit() { }
 
-  openSnackBar(message: string, action: string) {
+  openSnackBar(name: string, price: string) {
 
-    this.wishListService.addAtWishList(message, action);
+    this.wishListService.addAtWishList(name, Number(price));
 
-    this.snackBar.open(message, action, {
+    this.snackBar.open(name ,'Added in Wish List', {
       duration: 2000,
     });
 

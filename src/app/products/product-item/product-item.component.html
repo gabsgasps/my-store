@@ -7,8 +7,8 @@
       <img mat-card-image src="{{product.img}}" alt="">
       <mat-card-title #message>{{product.name}}</mat-card-title>
       <mat-card-content>
-        <p #action>
-          R$ {{product.price}}
+        <p>
+          R$ <span #action> {{product.price}}</span>
         </p>
         <p>{{product.parcel}}</p>
       </mat-card-content>
