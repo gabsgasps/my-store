@@ -8,11 +8,15 @@ import { CartService } from '../../cart/cart-service/cart-service';
   styleUrls: ['./product-item.component.css'],
 })
 export class ProductItemComponent implements OnInit {
-
+  
   @Input() products: Product[];
   
+  foi(t) {
+    t.innerHTML = 'Adicionado';
+  }
   constructor(private cartService: CartService) { }
 
+  
   add(name, price) {
 
     this.cartService.addProduct(name, price);

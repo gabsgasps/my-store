@@ -4,7 +4,7 @@ import { MatCardModule, MatButtonModule, MatGridListModule } from "@angular/mate
 
 import { ProductItemComponent } from "./product-item/product-item.component";
 import { ShowCaseComponent } from "./show-case/show-case.component";
-
+import {AddedOnClickModule} from './product-item/directive-added/added-on-click.module';
 
 @NgModule({
     declarations: [
@@ -16,7 +16,8 @@ import { ShowCaseComponent } from "./show-case/show-case.component";
         MatButtonModule,
         MatGridListModule,
         MatCardModule,
-        MatCardModule
+        MatCardModule,
+        AddedOnClickModule
     ],
     exports: [
         ProductItemComponent,

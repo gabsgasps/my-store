@@ -14,7 +14,10 @@
       </mat-card-content>
       <mat-card-actions>
         <button mat-flat-button>Buy</button>
-        <button mat-button (click)=" add(product.name, product.price) ">Add at Cart</button>
+        <button mat-button changeForAdded text="Adicionado"
+          [disabled]="disabled" 
+          (click)=" add(product.name, product.price);">
+          Add at Cart</button>
       </mat-card-actions>
   
     </mat-card>
