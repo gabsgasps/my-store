@@ -4,6 +4,7 @@ import { MatListModule, MatDividerModule, MatButtonModule, MatIconModule } from 
 
 import { WishListComponent } from './wish-list.component';
 import { DialogModule } from '../../shared/dialog/dialog.module';
+import { AddedOnClickModule } from '../../shared/directive-added/added-on-click.module';
 
 @NgModule({
   declarations: [WishListComponent],
@@ -13,7 +14,8 @@ import { DialogModule } from '../../shared/dialog/dialog.module';
     MatDividerModule,
     MatButtonModule,
     MatIconModule,
-    DialogModule
+    DialogModule,
+    AddedOnClickModule
   ],
   exports: [WishListComponent]
 })

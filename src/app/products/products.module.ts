@@ -4,7 +4,7 @@ import { MatCardModule, MatButtonModule, MatGridListModule, MatIconModule, MatTo
 
 import { ProductItemComponent } from "./product-item/product-item.component";
 import { ShowCaseComponent } from "./show-case/show-case.component";
-import {AddedOnClickModule} from './product-item/directive-added/added-on-click.module';
+import { AddedOnClickModule } from "../shared/directive-added/added-on-click.module";
 
 @NgModule({
     declarations: [
