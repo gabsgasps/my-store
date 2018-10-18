@@ -1,13 +1,15 @@
 <app-dialog>
     <mat-list>
         <h3 mat-subheader>Wish List</h3>
-        <div class="rowItem" *ngFor="let itemList of wishList">
+        <div 
+            class="rowItem" 
+            *ngFor="let itemList of wishList">
             <mat-list-item>
                     {{itemList.name}}
             
-                <button 
+                <button
+                changeForAdded text="Remove from Cart" 
                     mat-raised-button
-                    changeForAdded text="Adicionado"
                     (click)="addAtCart(itemList.name, itemList.price)">
                     Add at Cart
                 </button>

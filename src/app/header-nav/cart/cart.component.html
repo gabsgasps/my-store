@@ -12,9 +12,14 @@
     </thead>
     <mat-divider></mat-divider>
     <tbody *ngFor="let p of products">
-      <tr (click)="remove(p.name)">
-          <td>{{p.name}}</td>
+      <tr>
+          <td #t>{{p.name}}</td>
           <td>{{p.price}}</td>
+          <button
+            (click)="remove(t.innerHTML)"
+            mat-icon-button>
+            <mat-icon >close</mat-icon>
+          </button>
       </tr>
       <mat-divider></mat-divider>
     </tbody>

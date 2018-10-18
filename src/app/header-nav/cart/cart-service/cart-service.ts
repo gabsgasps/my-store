@@ -44,9 +44,10 @@ export class CartService {
     
     removeProductItem(name: any) {
 
-       this.products.splice(name, 1);
-       window.localStorage.setItem( NamelocalStorage, JSON.stringify(this.products));
-       this.productSubject.next(this.getProducts());
+        this.products = this.products.filter(product => product.name != name);
+
+        window.localStorage.setItem( NamelocalStorage, JSON.stringify(this.products));
+        this.productSubject.next(this.getProducts());
     }
 
     getSubjectProduct() {

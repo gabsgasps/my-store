@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 
 import { CartComponent } from "./cart.component";
-import {  MatDividerModule, MatButtonModule } from '@angular/material';
+import {  MatDividerModule, MatButtonModule, MatIconModule } from '@angular/material';
 import { RouterModule } from "@angular/router";
 import { DialogModule } from "../../shared/dialog/dialog.module";
 
@@ -14,6 +14,7 @@ import { DialogModule } from "../../shared/dialog/dialog.module";
         RouterModule,
         MatDividerModule, 
         MatButtonModule,
+        MatIconModule,
         DialogModule
     ],
     exports: [ 

@@ -38,7 +38,7 @@ export class WishListService {
 
     removeProductItem(name: any) {
 
-        this.wishList.splice(name, 1);
+        this.wishList = this.wishList.filter(product => product.name != name);
         window.localStorage.setItem( wishListLocalStorage, JSON.stringify(this.wishList));
         this.wishListSubject.next(this.getWishList());
     }
