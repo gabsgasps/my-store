@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { WishListService } from './wish-list.service/wish-list.service';
 import { CartProduct } from '../cart/cart-product';
 import { CartService } from '../cart/cart-service/cart-service';
-import { Renderer3 } from '@angular/core/src/render3/interfaces/renderer';
 
 @Component({
   selector: 'app-wish-list',
@@ -17,8 +16,6 @@ export class WishListComponent implements OnInit {
   
   wishList: CartProduct[]; 
   
-  @Input() status: string;
-
   constructor(
     private wishListService: WishListService,
     private cartService: CartService,
@@ -39,16 +36,11 @@ export class WishListComponent implements OnInit {
   addAtCart(name: string, price: number) {
 
       this.cartService.addProduct(name, price);
-
   }
 
-  remove(name:string) {
+  removeFromCart(name:string) {
     
-    if(this.status === 'Remove to Cart') {
-      this.cartService.removeProductItem(name);
-      this.render.setProperty(this.status, 'innerHTML', 'Add at Cart');
-    }
-
+    this.cartService.removeProductItem(name);
   }
 
   

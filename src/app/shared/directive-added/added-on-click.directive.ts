@@ -9,10 +9,8 @@ export class ChangeButtonDirective {
 
     constructor(
         private el: ElementRef,
-        private render: Renderer2
-    ) { 
-       
-    }
+        private render: Renderer2,
+    ) { }
 
    
 
@@ -21,9 +19,6 @@ export class ChangeButtonDirective {
         
         this.render.setProperty(this.el.nativeElement, 'innerHTML', `${this.text}`);
                     
-        
     }
-    
-
     
 }

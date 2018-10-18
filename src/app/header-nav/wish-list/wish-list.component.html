@@ -8,16 +8,20 @@
                     {{itemList.name}}
             
                 <button
-                changeForAdded text="Remove from Cart" 
                     mat-raised-button
+                    changeForAdded text="Remove from Cart"
                     (click)="addAtCart(itemList.name, itemList.price)">
                     Add at Cart
                 </button>
+
+                
+
                 <button
                     (click)="removeFromWishList(itemList.name)"
                     mat-icon-button>
                     <mat-icon >close</mat-icon>
                 </button>
+
             <mat-divider></mat-divider>
         </mat-list-item>
         </div>
