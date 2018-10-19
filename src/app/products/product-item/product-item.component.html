@@ -8,7 +8,7 @@
       <mat-card-title #message>{{product.name}}</mat-card-title>
       <mat-card-content>
         <p>
-          R$ <span #action> {{product.price}}</span>
+          R$ <span #action> {{product.price | number: '1.2'}}</span>
         </p>
         <p>{{product.parcel}}</p>
       </mat-card-content>

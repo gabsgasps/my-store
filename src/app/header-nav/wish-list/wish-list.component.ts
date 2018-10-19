@@ -41,7 +41,19 @@ export class WishListComponent implements OnInit {
   removeFromCart(name:string) {
     
     this.cartService.removeProductItem(name);
+
   }
 
-  
+  // actions(target:string, name: string, price: number) {
+
+  //   console.log(target === name);
+
+  //   if(target === 'Add at Cart') {
+
+  //     console.log('foi');
+  //   }else{
+  //     console.log('opa');
+  //   }
+    
+  // }
 }

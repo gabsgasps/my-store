@@ -14,7 +14,7 @@
     <tbody *ngFor="let p of products">
       <tr>
           <td #t>{{p.name}}</td>
-          <td>{{p.price}}</td>
+          <td>R$ {{ p.price | number: '1.2' }}</td>
           <button
             (click)="remove(t.innerHTML)"
             mat-icon-button>

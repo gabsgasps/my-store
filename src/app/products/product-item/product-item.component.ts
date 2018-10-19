@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MatSnackBar } from '@angular/material';
+
 import { Product } from '../product-item';
 import { CartService } from '../../header-nav/cart/cart-service/cart-service';
-import { MatSnackBar } from '@angular/material';
-import { WishListComponent } from '../../header-nav/wish-list/wish-list.component';
 import { WishListService } from '../../header-nav/wish-list/wish-list.service/wish-list.service';
 
 @Component({
@@ -29,7 +29,7 @@ export class ProductItemComponent implements OnInit {
 
   openSnackBar(name: string, price: string) {
 
-    this.wishListService.addAtWishList(name, Number(price));
+    this.wishListService.addAtWishList(name, parseFloat(price));
 
     this.snackBar.open(name ,'Added in Wish List', {
       duration: 2000,

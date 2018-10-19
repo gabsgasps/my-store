@@ -4,24 +4,33 @@ import { MatDialog } from '@angular/material';
 import { CartService } from './cart/cart-service/cart-service';
 import { CartComponent } from './cart/cart.component';
 import { WishListComponent } from './wish-list/wish-list.component';
+import { CartProduct } from './cart/cart-product';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit  {
+  
 
   title = ' Bem  Vindo';
-  length: number;
-
-  ngOnInit() {}
+  length$: Observable<CartProduct[]>;
+  length;
   
   constructor(
     public dialog: MatDialog,
     private cartService: CartService
   ) {
-    this.length = this.cartService.lengthOfProducts();
+    
+  }
+  
+  ngOnInit() {
+    
+    this.length$ =  this.cartService.getSubjectProduct();
+
+    this.length$.subscribe( length => this.length = length);
   }
 
   openDialog(): void {
@@ -43,5 +52,6 @@ export class HeaderComponent implements OnInit {
     });
 
   }
+
   
 }
