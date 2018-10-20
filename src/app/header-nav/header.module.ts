@@ -10,8 +10,7 @@ import { WishListModule } from "./wish-list/wish-list.module";
 
 @NgModule({
     declarations: [
-
-        HeaderComponent
+        HeaderComponent,
     ],
     imports: [ 
         CommonModule,
@@ -22,7 +21,7 @@ import { WishListModule } from "./wish-list/wish-list.module";
         MatToolbarModule,
         MatBadgeModule,
         WishListModule,
-        DialogModule
+        DialogModule,
     ],
     exports: [
         HeaderComponent

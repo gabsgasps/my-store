@@ -36,7 +36,7 @@ export class HeaderComponent implements OnInit  {
   openDialog(): void {
     
     const dialogRef = this.dialog.open(CartComponent,{
-      width: '500px',
+      width: 'auto',
       height: 'auto',
       data: ' '
     });
@@ -46,7 +46,7 @@ export class HeaderComponent implements OnInit  {
   openDialogWishList(): void {
     
     const ref = this.dialog.open(WishListComponent,{
-      width: '500px',
+      width: 'auto',
       height: 'auto',
       data: ' '
     });

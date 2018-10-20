@@ -1,29 +1,32 @@
 <app-dialog>
-    <mat-list>
+    <mat-list class="main-wishList" >
         <h3 mat-subheader>Wish List</h3>
-        <div 
-            class="rowItem" 
-            *ngFor="let itemList of wishList">
-            <mat-list-item>
-                    {{itemList.name}}
+            <mat-list-item class="rowItem" 
+            *ngFor="let itemList of wishList"
+            >
             
-                <button
-                    mat-raised-button
-                    changeForAdded text="Remove from Cart"
-                    (click)="addAtCart(itemList.name, itemList.price)">
-                    Add at Cart
-                </button>
-
-                
-
-                <button
-                    (click)="removeFromWishList(itemList.name)"
-                    mat-icon-button>
-                    <mat-icon >close</mat-icon>
-                </button>
-
+            <p mat-line>
+                {{itemList.name}}
+            </p>
+            
+            
+                    
+                    <button
+                    
+                        mat-stroked-button
+                        changeForAdded text="Remove from Cart"
+                        (click)="addAtCart(itemList.name, itemList.price)">
+                        Add at Cart
+                    </button>
+    
+                    
+    
+                    <button
+                        (click)="removeFromWishList(itemList.name)"
+                        mat-icon-button>
+                        <mat-icon >close</mat-icon>
+                    </button>
             <mat-divider></mat-divider>
         </mat-list-item>
-        </div>
     </mat-list>
 </app-dialog>

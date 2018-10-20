@@ -2,10 +2,10 @@
 
   <mat-toolbar-row>
     <span>{{title}}</span>
-    <span class="example-spacer"></span>
-    <mat-icon class="example-icon">edit</mat-icon>
-    <mat-icon class="example-icon">exit_to_app</mat-icon> 
-    <mat-icon class="example-icon">
+    <span class="spacer"></span>
+    <mat-icon class="icon">edit</mat-icon>
+    <mat-icon class="icon">exit_to_app</mat-icon> 
+    <mat-icon class="icon">
       <span 
         mat-raised-button 
         (click)="openDialog()"
@@ -17,19 +17,23 @@
     
     <mat-icon
       (click)="openDialogWishList()" 
-      class="example-icon">
+      class="icon">
       favorite
     </mat-icon>
     
+    
+    <button mat-icon-button [matMenuTriggerFor]="menu" >
+      <mat-icon>menu</mat-icon>
+    </button>
 
-  <mat-icon [matMenuTriggerFor]="menu" class="example-icon">menu</mat-icon>
-    <mat-menu #menu="matMenu" xPosition="before">
+    <mat-menu #menu="matMenu">
       <button mat-menu-item>Item 1</button>
       <button mat-menu-item>Item 2</button>
       <button mat-menu-item>Item 2</button>
       <button mat-menu-item>Item 2</button>
     </mat-menu>
     
+
     
     
   </mat-toolbar-row>

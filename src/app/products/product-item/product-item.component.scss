@@ -1,0 +1,14 @@
+.product-card {
+    width: 300px;
+    max-height: 200;
+    margin: .9rem;
+  }
+  
+  .product-image {
+    
+  }
+  .card-main{
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+  }

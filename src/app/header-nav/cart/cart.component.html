@@ -3,7 +3,7 @@
 
 <app-dialog>
   
-  <table>
+  <table class="main-cart" >
     <thead>
       <tr>
         <th>Name</th>
@@ -32,7 +32,7 @@
       <button mat-raised-button routerLink="/carrinho"> See Cart</button>
       <button mat-raised-button (click)="empty()">Empty Cart</button>  
       <button mat-raised-button color="primary">Finish </button>
+      <button mat-raised-button disabled > TOTAL: R$ {{getTotal}}</button>
     </div>
-    <button mat-raised-button disabled > TOTAL: R$ {{getTotal}}</button>
   </div>
 </app-dialog>

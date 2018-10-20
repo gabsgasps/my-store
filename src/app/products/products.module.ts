@@ -6,6 +6,7 @@ import { ProductItemComponent } from "./product-item/product-item.component";
 import { ShowCaseComponent } from "./show-case/show-case.component";
 import { AddedOnClickModule } from "../shared/directive-added/added-on-click.module";
 
+
 @NgModule({
     declarations: [
         ProductItemComponent,
@@ -20,7 +21,7 @@ import { AddedOnClickModule } from "../shared/directive-added/added-on-click.mod
         AddedOnClickModule,
         MatIconModule,
         MatTooltipModule,
-        MatSnackBarModule
+        MatSnackBarModule,
     ],
     exports: [
         ProductItemComponent,
