@@ -12,10 +12,10 @@
             
                     
                     <button
-                    
+                        #sBtn
                         mat-stroked-button
                         changeForAdded text="Remove from Cart"
-                        (click)="addAtCart(itemList.name, itemList.price)">
+                        (click)="action(itemList.name, itemList.price, $event.target.innerHTML)">
                         Add at Cart
                     </button>
     

@@ -6,6 +6,7 @@ import { Directive, ElementRef, Renderer2, HostListener, Input } from '@angular/
 export class ChangeButtonDirective {
 
     @Input() text:string;
+    @Input() text2: string;
 
     constructor(
         private el: ElementRef,
