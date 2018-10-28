@@ -1,8 +1,8 @@
-import { NgModule } from "@angular/core";
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule} from '@angular/router';
 
-import { HomePageComponent } from "./home/home-page/home-page.component";
-import { CartComponent } from "./header-nav/cart/cart.component";
+import { HomePageComponent } from './home/home-page/home-page.component';
+import { CartComponent } from './header-nav/cart/cart.component';
 
 const routes: Routes = [
     {
@@ -13,7 +13,7 @@ const routes: Routes = [
         path: 'carrinho',
         component: CartComponent
     }
-]
+];
 @NgModule({
     imports: [ RouterModule.forRoot(routes) ],
     exports: [ RouterModule ]

@@ -1,10 +1,10 @@
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { MatCardModule, MatButtonModule, MatGridListModule, MatIconModule, MatTooltipModule, MatSnackBarModule } from "@angular/material";
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MatCardModule, MatButtonModule, MatGridListModule, MatIconModule, MatTooltipModule, MatSnackBarModule } from '@angular/material';
 
-import { ProductItemComponent } from "./product-item/product-item.component";
-import { ShowCaseComponent } from "./show-case/show-case.component";
-import { AddedOnClickModule } from "../shared/directive-added/added-on-click.module";
+import { ProductItemComponent } from './product-item/product-item.component';
+import { ShowCaseComponent } from './show-case/show-case.component';
+import { AddedOnClickModule } from '../shared/directive-added/added-on-click.module';
 
 
 @NgModule({
@@ -28,6 +28,4 @@ import { AddedOnClickModule } from "../shared/directive-added/added-on-click.mod
         ShowCaseComponent
     ]
 })
-export class ProductsModule {
-
-}
+export class ProductsModule { }

@@ -18,17 +18,17 @@ export class CartComponent implements OnInit {
   products: CartProduct[];
   dataSource;
   constructor( private cartService: CartService ) { }
-  
   ngOnInit() {
-    
     this.subject$ = this.cartService.getSubjectProduct();
     
-      this.subject$
-      .subscribe( products => {
+      this.subject$.subscribe( products => {
 
-        this.products = products;     
-        if(this.cartService.hasProducts())
-        this.getTotal = (products.reduce((price1, price2) => price1 + price2.price, 0)).toFixed(2);
+        this.products = products;
+
+        if (this.cartService.hasProducts()) {
+          
+          this.getTotal = (products.reduce((price1, price2) => price1 + price2.price, 0)).toFixed(2);
+        }
       });
       this.dataSource = this.products;
 

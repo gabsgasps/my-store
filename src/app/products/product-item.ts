@@ -1,7 +1,7 @@
-export interface Product{
+export interface Product {
 
-    name: string,
-    price: number,
-    img: string,
-    parcel: string
+    name: string;
+    price: number;
+    img: string;
+    parcel: string;
 }

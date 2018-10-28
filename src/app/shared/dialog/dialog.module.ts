@@ -1,8 +1,8 @@
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { MatIconModule, MatDialogModule, MatButtonModule } from "@angular/material";
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MatIconModule, MatDialogModule, MatButtonModule } from '@angular/material';
 
-import { DialogComponent } from "./dialog.component";
+import { DialogComponent } from './dialog.component';
 
 @NgModule({
     imports: [
@@ -16,6 +16,4 @@ import { DialogComponent } from "./dialog.component";
     ],
     exports: [DialogComponent]
 })
-export class DialogModule {
-
-}
+export class DialogModule { }

@@ -16,17 +16,16 @@
         <button mat-flat-button>Buy</button>
         <button 
           mat-button 
-          changeForAdded text="Adicionado"
+          ChangeButtonDirective text="Adicionado"
           (click)=" add(product.name, product.price);">
           Add at Cart</button>
-
           <button 
             mat-icon-button 
             matTooltip="Add to Wishlist"
             aria-label="Heart Icon click to add wish list"
             color="warn">
             <mat-icon
-              changeForAdded text="favorite" 
+            ChangeButtonDirective text="favorite" 
               (click)="openSnackBar(message.innerHTML, action.innerHTML)">
               favorite_border
             </mat-icon>

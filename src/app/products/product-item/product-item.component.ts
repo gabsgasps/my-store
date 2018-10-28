@@ -11,9 +11,8 @@ import { WishListService } from '../../header-nav/wish-list/wish-list.service/wi
   styleUrls: ['./product-item.component.scss'],
 })
 export class ProductItemComponent implements OnInit {
-  
+
   @Input() products: Product[];
-  
   constructor(
     private cartService: CartService,
     public snackBar: MatSnackBar,
@@ -31,7 +30,7 @@ export class ProductItemComponent implements OnInit {
 
     this.wishListService.addAtWishList(name, parseFloat(price));
 
-    this.snackBar.open(name ,'Added in Wish List', {
+    this.snackBar.open(name , 'Added in Wish List', {
       duration: 2000,
     });
 

@@ -13,12 +13,10 @@ import { Observable } from 'rxjs';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit  {
-  
-
   title = ' Bem  Vindo';
   length$: Observable<CartProduct[]>;
   length;
-  
+
   constructor(
     public dialog: MatDialog,
     private cartService: CartService
@@ -45,7 +43,7 @@ export class HeaderComponent implements OnInit  {
 
   openDialogWishList(): void {
     
-    const ref = this.dialog.open(WishListComponent,{
+    const ref = this.dialog.open(WishListComponent, {
       width: 'auto',
       height: 'auto',
       data: ' '

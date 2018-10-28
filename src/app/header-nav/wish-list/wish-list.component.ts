@@ -38,17 +38,20 @@ export class WishListComponent implements OnInit {
   }
 
   
-  action(name:string, price:number, target:string) {
+  action(name: string, price: number, target: string) {
 
     target = target.trim();
     
-    if(target === 'Add at Cart')
+    if (target === 'Add at Cart') {
       this.cartService.addProduct(name, price);
-    
+      this.status = false;
+    }
 
-    if(target === 'Remove from Cart'){
+
+    if (target === 'Remove from Cart') {
       this.cartService.removeProductItem(name);
-      this.status = false
+      this.status = true;
+      
     }
 
   }

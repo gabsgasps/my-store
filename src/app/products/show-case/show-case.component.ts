@@ -9,7 +9,6 @@ import { Product } from '../product-item';
 export class ShowCaseComponent implements OnInit {
 
   @Input() products: Product[];
-  
   constructor() { }
 
   ngOnInit() {

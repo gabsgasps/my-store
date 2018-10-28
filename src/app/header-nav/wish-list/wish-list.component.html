@@ -13,8 +13,8 @@
                     
                     <button
                         #sBtn
-                        mat-stroked-button
-                        changeForAdded text="Remove from Cart"
+                        mat-button
+                        ChangeButtonDirective text="Remove from Cart"
                         (click)="action(itemList.name, itemList.price, $event.target.innerHTML)">
                         Add at Cart
                     </button>
@@ -24,7 +24,7 @@
                     <button
                         (click)="removeFromWishList(itemList.name)"
                         mat-icon-button>
-                        <mat-icon >close</mat-icon>
+                        <mat-icon >delete</mat-icon>
                     </button>
             <mat-divider></mat-divider>
         </mat-list-item>

@@ -6,11 +6,10 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule,
   MatCardModule, MatMenuModule,
-  MatIconModule, MatButtonModule, 
-  MatBadgeModule, MatDialogModule, 
-  MatTableModule, MatDividerModule, 
-  MatToolbarModule, 
-  MatTooltipModule} from '@angular/material';
+  MatIconModule, MatButtonModule,
+  MatBadgeModule, MatDialogModule,
+  MatTableModule, MatDividerModule,
+  MatToolbarModule, MatTooltipModule } from '@angular/material';
 
 
 import { AppRoutingModule } from './app.routing.module.';
@@ -25,7 +24,7 @@ import { DialogModule } from './shared/dialog/dialog.module';
 
 @NgModule({
   declarations: [
-    AppComponent  
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -49,13 +48,12 @@ import { DialogModule } from './shared/dialog/dialog.module';
     CartModule,
     HeaderModule,
     WishListModule,
-
   ],
   entryComponents: [
     CartComponent,
     WishListComponent
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
