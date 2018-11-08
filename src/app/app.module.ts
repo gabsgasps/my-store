@@ -29,7 +29,6 @@ import { DialogModule } from './shared/dialog/dialog.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
@@ -48,6 +47,7 @@ import { DialogModule } from './shared/dialog/dialog.module';
     CartModule,
     HeaderModule,
     WishListModule,
+    AppRoutingModule,
   ],
   entryComponents: [
     CartComponent,

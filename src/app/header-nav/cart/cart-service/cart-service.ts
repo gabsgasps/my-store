@@ -50,7 +50,7 @@ export class CartService {
 
         this.products = [];
         window.localStorage.removeItem(NamelocalStorage);
-        this.productSubject.next(this.getProducts());
+        this.productSubject.next(null);
     }
     
     hasProducts() {
